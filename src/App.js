@@ -2,21 +2,24 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-const [name, setName] = useState("Neeraj"); 
+const [count, setCount] = useState(0);  
 
-// let a = "Neeraj" 
+function increment(){
+  return setCount(count + 1);  
+}
 
-function changeName(){
-  console.log('Clicked!!')
-  // a = "Rakesh"
-  // return a; 
-  return setName('Johnny!');
+function decrement(){
+  return setCount(count - 1);  
 }
 
   return (
 <div className='App m-5'>
-<div>Hello, {name} </div>  
-<button onClick={changeName}>Click Me!!</button>
+
+<div className='p-2'><button onClick={increment}>+</button></div>
+
+<div>{count} </div>  
+
+<div className='p-3'><button onClick={decrement}>-</button></div>
 </div>
 
   );
