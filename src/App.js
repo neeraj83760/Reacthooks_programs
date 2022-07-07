@@ -5,11 +5,14 @@ function App() {
 const [count, setCount] = useState(0);  
 
 function increment(){
-  return setCount(count + 1);  
+  
+  console.log(count) // this will show the count value one less than in the console which is showing in the browser 
+  setCount(count + 1);  // the state of the count updating here is not syncronus it asyncronus 
+  
 }
 
 function decrement(){
-  return setCount(count - 1);  
+setCount(count - 1);  
 }
 
   return (
@@ -19,7 +22,7 @@ function decrement(){
 
 <div>{count} </div>  
 
-<div className='p-3'><button onClick={decrement}>-</button></div>
+<div className='p-2'><button onClick={decrement}>-</button></div>
 </div>
 
   );
